@@ -44,7 +44,7 @@ A modern student developer community platform built with React, Vite, TypeScript
 git clone https://github.com/AWS-Cloud-Club-CUJ/AWS-Cloud-site.git
 
 # Navigate to project directory
-cd antigrav
+cd AWS-Cloud-site
 
 # Install dependencies
 npm install
