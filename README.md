@@ -69,6 +69,34 @@ npm run preview
 
 ---
 
+## 🌐 Deploying to GitHub Pages (Free Hosting)
+
+This repository is pre-configured for free hosting on **GitHub Pages** using two simple methods:
+
+### Method 1: Automatic Deployment via GitHub Actions (Recommended)
+
+1. Push your latest code to the `main` branch:
+   ```bash
+   git add .
+   git commit -m "Deploy site"
+   git push origin main
+   ```
+2. Go to your repository on GitHub: **Settings** → **Pages** (in the left sidebar).
+3. Under **Build and deployment** → **Source**, select **GitHub Actions**.
+4. GitHub Actions will automatically build and publish your website at `https://<your-username>.github.io/AWS-Cloud-site/`.
+
+### Method 2: One-Command Manual Deploy via `gh-pages`
+
+1. Run the deploy script from your terminal:
+   ```bash
+   npm run deploy
+   ```
+2. Go to repository **Settings** → **Pages**.
+3. Under **Build and deployment** → **Source**, select **Deploy from a branch**.
+4. Select the **`gh-pages`** branch and `/ (root)` folder, then click **Save**.
+
+---
+
 ## 📖 Maintainer Guide
 
 For full details on updating events, team members, images, copy, and themes, see the [Maintainer Handbook (`handbook.md`)](./handbook.md) and [Product Requirements Document (`PRD.md`)](./PRD.md).
