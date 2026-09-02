@@ -27,15 +27,15 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary:
-      'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-semibold hover:from-blue-500 hover:via-indigo-500 hover:to-purple-500 shadow-md shadow-blue-500/20 border border-blue-400/20',
+      'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-semibold hover:from-blue-500 hover:via-indigo-500 hover:to-purple-500 shadow-[0_4px_20px_rgba(59,130,246,0.35),inset_0_1px_1px_rgba(255,255,255,0.35)] border border-white/25 backdrop-blur-md',
     secondary:
-      'bg-[#10192D] text-slate-200 hover:bg-[#15223C] hover:text-white border border-white/10 hover:border-slate-600 shadow-sm',
+      'bg-white/[0.08] backdrop-blur-xl text-slate-100 hover:bg-white/[0.14] hover:text-white border border-white/15 hover:border-white/30 shadow-[0_4px_20px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.2)]',
     purple:
-      'bg-purple-600 text-white font-semibold hover:bg-purple-500 shadow-md shadow-purple-500/20 border border-purple-400/20',
+      'bg-purple-600/90 text-white font-semibold hover:bg-purple-500 shadow-[0_4px_20px_rgba(139,92,246,0.35),inset_0_1px_1px_rgba(255,255,255,0.35)] border border-white/20 backdrop-blur-md',
     outline:
-      'bg-transparent text-slate-200 border border-white/15 hover:border-blue-500/60 hover:text-white hover:bg-blue-500/10',
+      'bg-white/[0.04] backdrop-blur-xl text-slate-200 border border-white/15 hover:border-blue-400/50 hover:text-white hover:bg-blue-500/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]',
     ghost:
-      'bg-transparent text-slate-400 hover:text-white hover:bg-white/5 border border-transparent',
+      'bg-transparent text-slate-400 hover:text-white hover:bg-white/[0.06] border border-transparent backdrop-blur-sm',
   };
 
   const sizeStyles = {

@@ -10,7 +10,10 @@ interface AboutPageProps {
 }
 
 export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
-  const { about, hero } = siteContent;
+  const { about } = siteContent;
+  const meetupLink =
+    siteContent.socialLinks.find((s) => s.platform === 'meetup')?.url ||
+    'https://www.meetup.com/aws-cloud-club-at-central-university-of-jammu/members/?op=all';
 
   const faqs = [
     {
@@ -63,7 +66,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-5xl mx-auto">
             {/* Left Column: Mission Narrative */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="p-6 sm:p-7 rounded-2xl bg-[#0E1629] border border-white/10 shadow-lg space-y-4">
+              <div className="p-6 sm:p-7 rounded-3xl apple-glass shadow-xl space-y-4">
                 <h2 className="text-lg font-bold text-[#F8FAFC] font-['Space_Grotesk']">
                   Our Mission & Vision
                 </h2>
@@ -77,21 +80,21 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/10 flex flex-wrap gap-3 text-xs font-mono text-slate-300">
-                  <span className="flex items-center gap-1.5 text-blue-400">
+                <div className="pt-4 border-t border-white/10 flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                  <span className="apple-glass-subtle px-3 py-1 rounded-full flex items-center gap-1.5 text-blue-400 text-[11px]">
                     <CheckCircle2 className="w-3.5 h-3.5" /> Student-Led
                   </span>
-                  <span className="flex items-center gap-1.5 text-indigo-400">
+                  <span className="apple-glass-subtle px-3 py-1 rounded-full flex items-center gap-1.5 text-indigo-400 text-[11px]">
                     <CheckCircle2 className="w-3.5 h-3.5" /> Multi-Cloud
                   </span>
-                  <span className="flex items-center gap-1.5 text-purple-400">
+                  <span className="apple-glass-subtle px-3 py-1 rounded-full flex items-center gap-1.5 text-purple-400 text-[11px]">
                     <CheckCircle2 className="w-3.5 h-3.5" /> All Branches
                   </span>
                 </div>
               </div>
 
               {/* FAQs */}
-              <div className="p-6 rounded-2xl bg-[#0E1629] border border-white/10 space-y-3.5 shadow-lg">
+              <div className="p-6 rounded-3xl apple-glass space-y-3.5 shadow-xl">
                 <div className="flex items-center gap-2 text-[#F8FAFC] font-semibold text-sm font-['Space_Grotesk']">
                   <HelpCircle className="w-4 h-4 text-blue-400" />
                   <span>Frequently Asked Questions</span>
@@ -99,7 +102,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
 
                 <div className="space-y-2.5">
                   {faqs.map((faq, idx) => (
-                    <div key={idx} className="p-3 rounded-xl bg-[#10192D] border border-white/5 space-y-1">
+                    <div key={idx} className="p-3.5 rounded-2xl apple-glass-subtle space-y-1">
                       <div className="text-xs font-semibold text-slate-200">{faq.q}</div>
                       <div className="text-[11px] text-slate-400 leading-relaxed">{faq.a}</div>
                     </div>
@@ -115,8 +118,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               </h2>
 
               <div className="space-y-3">
-                <div className="p-4 rounded-2xl bg-[#0E1629] border border-white/10 flex items-start gap-3.5">
-                  <div className="p-2.5 rounded-xl bg-[#10192D] text-blue-400 shrink-0">
+                <div className="p-4 rounded-2xl apple-glass hover:border-blue-400/40 transition-all flex items-start gap-3.5 shadow-md">
+                  <div className="p-2.5 rounded-xl apple-glass-subtle text-blue-400 shrink-0">
                     <Cloud className="w-4 h-4" />
                   </div>
                   <div>
@@ -127,8 +130,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-[#0E1629] border border-white/10 flex items-start gap-3.5">
-                  <div className="p-2.5 rounded-xl bg-[#10192D] text-indigo-400 shrink-0">
+                <div className="p-4 rounded-2xl apple-glass hover:border-indigo-400/40 transition-all flex items-start gap-3.5 shadow-md">
+                  <div className="p-2.5 rounded-xl apple-glass-subtle text-indigo-400 shrink-0">
                     <Cpu className="w-4 h-4" />
                   </div>
                   <div>
@@ -139,8 +142,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-[#0E1629] border border-white/10 flex items-start gap-3.5">
-                  <div className="p-2.5 rounded-xl bg-[#10192D] text-purple-400 shrink-0">
+                <div className="p-4 rounded-2xl apple-glass hover:border-purple-400/40 transition-all flex items-start gap-3.5 shadow-md">
+                  <div className="p-2.5 rounded-xl apple-glass-subtle text-purple-400 shrink-0">
                     <Users className="w-4 h-4" />
                   </div>
                   <div>
@@ -151,8 +154,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-[#0E1629] border border-white/10 flex items-start gap-3.5">
-                  <div className="p-2.5 rounded-xl bg-[#10192D] text-sky-400 shrink-0">
+                <div className="p-4 rounded-2xl apple-glass hover:border-sky-400/40 transition-all flex items-start gap-3.5 shadow-md">
+                  <div className="p-2.5 rounded-xl apple-glass-subtle text-sky-400 shrink-0">
                     <Award className="w-4 h-4" />
                   </div>
                   <div>
@@ -167,7 +170,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               {/* Action */}
               <div className="pt-4 flex items-center gap-3">
                 <Button
-                  href={hero.joinCta.href}
+                  href={meetupLink}
                   isExternal
                   variant="primary"
                   size="md"

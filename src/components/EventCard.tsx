@@ -32,9 +32,9 @@ export const EventCard: React.FC<EventCardProps> = ({ event }) => {
   };
 
   return (
-    <div className="group relative rounded-2xl bg-[#0E1629] border border-white/10 p-4 sm:p-6 hover:border-blue-500/30 hover:bg-[#121B30] transition-all duration-300 shadow-md flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-5">
+    <div className="group relative rounded-3xl apple-glass apple-glass-interactive p-4 sm:p-6 shadow-md flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-5">
       {/* Date Block */}
-      <div className="flex sm:flex-col items-center justify-between sm:justify-center shrink-0 sm:w-24 p-2.5 sm:p-3 rounded-xl bg-[#10192D] border border-white/10 group-hover:border-blue-500/40 transition-all">
+      <div className="flex sm:flex-col items-center justify-between sm:justify-center shrink-0 sm:w-24 p-2.5 sm:p-3 rounded-2xl apple-glass-subtle group-hover:border-blue-400/40 transition-all">
         <div className="text-center">
           <span className="block text-xl sm:text-2xl font-black text-[#F8FAFC] font-mono tracking-tight group-hover:text-blue-400 transition-colors">
             {day}

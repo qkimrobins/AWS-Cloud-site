@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Brand Column */}
           <div className="md:col-span-6 space-y-2.5">
             <div className="flex items-center gap-2.5">
-              <div className="h-8 w-8 rounded-lg bg-[#10192D] border border-white/10 p-1 flex items-center justify-center">
+              <div className="h-9 w-9 rounded-xl apple-glass-subtle p-1.5 flex items-center justify-center">
                 <img
                   src={identity.logo}
                   alt="Cloud Club Logo"
@@ -105,7 +105,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   aria-label={social.ariaLabel}
                   className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-blue-400 transition-colors"
                 >
-                  <span className="p-1.5 rounded-md bg-[#10192D] border border-white/10 text-slate-300">
+                  <span className="p-1.5 rounded-xl apple-glass-subtle text-slate-300">
                     {getSocialIcon(social.platform)}
                   </span>
                   <span className="capitalize">{social.label}</span>
@@ -122,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <button
             type="button"
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#10192D] border border-white/10 text-slate-400 hover:text-[#F8FAFC] transition-all text-[11px] font-mono cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full apple-glass-subtle text-slate-400 hover:text-[#F8FAFC] transition-all text-[11px] font-mono cursor-pointer"
             aria-label="Back to top of page"
           >
             <span>Back to top</span>

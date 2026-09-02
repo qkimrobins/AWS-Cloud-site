@@ -21,7 +21,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       <HeroSection onNavigate={onNavigate} />
 
       {/* Minimal Stats Bar */}
-      <section className="border-y border-white/10 bg-[#0A0F1D]/60 py-5 backdrop-blur-sm relative z-20">
+      <section className="border-y border-white/10 bg-[#0A1020]/50 py-5 backdrop-blur-xl relative z-20 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
         <Container>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 text-center">
             <div className="space-y-0.5">
@@ -78,10 +78,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {/* Bento Card 1 */}
             <div
               onClick={() => onNavigate('why-join')}
-              className="group p-5 sm:p-6 rounded-2xl bg-[#0E1629] border border-white/10 hover:border-blue-500/40 hover:bg-[#121B30] transition-all cursor-pointer flex flex-col justify-between space-y-3"
+              className="group p-6 sm:p-7 rounded-3xl apple-glass apple-glass-interactive cursor-pointer flex flex-col justify-between space-y-3"
             >
               <div>
-                <div className="p-2.5 rounded-xl bg-[#10192D] border border-white/10 text-blue-400 w-fit mb-3 group-hover:scale-105 transition-transform">
+                <div className="p-2.5 rounded-2xl apple-glass-subtle text-blue-400 w-fit mb-3 group-hover:scale-105 transition-transform">
                   <Cloud className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-bold text-[#F8FAFC] group-hover:text-blue-400 transition-colors font-['Space_Grotesk']">
@@ -101,10 +101,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {/* Bento Card 2 */}
             <div
               onClick={() => onNavigate('events')}
-              className="group p-5 sm:p-6 rounded-2xl bg-[#0E1629] border border-white/10 hover:border-indigo-500/40 hover:bg-[#121B30] transition-all cursor-pointer flex flex-col justify-between space-y-3"
+              className="group p-6 sm:p-7 rounded-3xl apple-glass apple-glass-interactive cursor-pointer flex flex-col justify-between space-y-3"
             >
               <div>
-                <div className="p-2.5 rounded-xl bg-[#10192D] border border-white/10 text-indigo-400 w-fit mb-3 group-hover:scale-105 transition-transform">
+                <div className="p-2.5 rounded-2xl apple-glass-subtle text-indigo-400 w-fit mb-3 group-hover:scale-105 transition-transform">
                   <Layers className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-bold text-[#F8FAFC] group-hover:text-indigo-400 transition-colors font-['Space_Grotesk']">
@@ -124,10 +124,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {/* Bento Card 3 */}
             <div
               onClick={() => onNavigate('about')}
-              className="group p-5 sm:p-6 rounded-2xl bg-[#0E1629] border border-white/10 hover:border-purple-500/40 hover:bg-[#121B30] transition-all cursor-pointer flex flex-col justify-between space-y-3"
+              className="group p-6 sm:p-7 rounded-3xl apple-glass apple-glass-interactive cursor-pointer flex flex-col justify-between space-y-3"
             >
               <div>
-                <div className="p-2.5 rounded-xl bg-[#10192D] border border-white/10 text-purple-400 w-fit mb-3 group-hover:scale-105 transition-transform">
+                <div className="p-2.5 rounded-2xl apple-glass-subtle text-purple-400 w-fit mb-3 group-hover:scale-105 transition-transform">
                   <Cpu className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-bold text-[#F8FAFC] group-hover:text-purple-400 transition-colors font-['Space_Grotesk']">
@@ -149,13 +149,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
       {/* Featured Event Spotlight */}
       {latestEvent && (
-        <section className="py-8 border-y border-white/10 bg-[#0C1222]/40 relative">
+        <section className="py-8 border-y border-white/10 bg-[#0C1222]/30 relative">
           <Container>
-            <div className="max-w-4xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl bg-[#0E1629] border border-white/10">
+            <div className="max-w-4xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 sm:p-6 rounded-3xl apple-glass shadow-xl">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <Badge variant="purple" size="sm" dot={false}>
-                    Next Event
+                    {latestEvent.status === 'upcoming' ? 'Next Event' : 'Recent Event'}
                   </Badge>
                   <span className="text-xs font-mono text-slate-400 flex items-center gap-1">
                     <Calendar className="w-3.5 h-3.5 text-blue-400" />
@@ -187,39 +187,41 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </section>
       )}
 
-      {/* Minimal Call to Action */}
-      <section className="py-12 md:py-16 bg-gradient-to-b from-[#0C1222]/80 to-[#080C16] relative text-center">
-        <Container className="relative z-10 max-w-xl">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#F8FAFC] tracking-tight font-['Space_Grotesk'] mb-2">
-            Ready to Build?
-          </h2>
+      {/* Apple Glass Call to Action */}
+      <section className="py-12 md:py-20 relative text-center">
+        <Container className="relative z-10 max-w-2xl">
+          <div className="p-8 sm:p-12 rounded-3xl apple-glass shadow-2xl space-y-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#F8FAFC] tracking-tight font-['Space_Grotesk']">
+              Ready to Build?
+            </h2>
 
-          <p className="text-xs sm:text-sm text-slate-400 mb-6">
-            Join 200+ student developers at Central University of Jammu.
-          </p>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto">
+              Join 200+ student developers at Central University of Jammu.
+            </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <Button
-              href={hero.joinCta.href}
-              isExternal
-              variant="primary"
-              size="md"
-              icon={<ArrowRight className="w-4 h-4" />}
-            >
-              Join Community
-            </Button>
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+              <Button
+                href={hero.joinCta.href}
+                isExternal
+                variant="primary"
+                size="md"
+                icon={<ArrowRight className="w-4 h-4" />}
+              >
+                Join Community
+              </Button>
 
-            <Button
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('contact');
-              }}
-              variant="secondary"
-              size="md"
-            >
-              Contact Us
-            </Button>
+              <Button
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate('contact');
+                }}
+                variant="secondary"
+                size="md"
+              >
+                Contact Us
+              </Button>
+            </div>
           </div>
         </Container>
       </section>

@@ -21,10 +21,10 @@ export const TeamCard: React.FC<TeamCardProps> = ({ member }) => {
   };
 
   return (
-    <div className="group relative rounded-2xl bg-[#0E1629] border border-white/10 p-4 sm:p-5 flex flex-col items-center text-center transition-all duration-300 hover:border-blue-500/40 hover:bg-[#121B30] shadow-sm">
+    <div className="group relative rounded-3xl apple-glass apple-glass-interactive p-4 sm:p-5 flex flex-col items-center text-center shadow-md">
       {/* Portrait / Avatar Container */}
       <div className="relative mb-3.5">
-        <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-white/15 group-hover:border-blue-500/60 transition-all duration-300 shadow-lg bg-gradient-to-br from-[#10192D] to-[#15223C] flex items-center justify-center">
+        <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-3xl overflow-hidden apple-glass-subtle group-hover:border-blue-400/50 transition-all duration-300 shadow-xl flex items-center justify-center">
           {!imageFailed ? (
             <img
               src={member.image}
@@ -48,7 +48,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({ member }) => {
         {/* Small Domain Pill */}
         {member.badge && (
           <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2">
-            <span className="text-[9px] font-mono font-semibold px-2 py-0.5 rounded-full bg-[#10192D] text-slate-200 border border-white/20 shadow whitespace-nowrap">
+            <span className="text-[9px] font-mono font-semibold px-2.5 py-0.5 rounded-full apple-glass-subtle text-slate-200 shadow-sm whitespace-nowrap">
               {member.badge}
             </span>
           </div>

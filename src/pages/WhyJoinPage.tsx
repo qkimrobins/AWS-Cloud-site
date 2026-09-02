@@ -88,16 +88,16 @@ export const WhyJoinPage: React.FC<WhyJoinPageProps> = ({ onNavigate }) => {
             </h2>
 
             {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center gap-1.5">
+            <div className="flex flex-wrap items-center gap-2">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   type="button"
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-3 py-1 rounded-full text-xs font-medium transition-all cursor-pointer ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
                     activeCategory === cat
-                      ? 'bg-blue-600 text-white font-semibold shadow-sm'
-                      : 'bg-[#10192D] text-slate-400 hover:text-white border border-white/10'
+                      ? 'bg-blue-600/90 text-white font-semibold shadow-[0_0_15px_rgba(59,130,246,0.5),inset_0_1px_1px_rgba(255,255,255,0.3)] border border-blue-400/40'
+                      : 'apple-glass-subtle text-slate-300 hover:text-white hover:bg-white/[0.1]'
                   }`}
                 >
                   {cat === 'all' ? 'All' : cat}
@@ -116,7 +116,7 @@ export const WhyJoinPage: React.FC<WhyJoinPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* 4-Stage Pathway */}
-      <section className="py-10 md:py-14 border-t border-white/10 bg-[#0C1222]/40 relative">
+      <section className="py-10 md:py-14 border-t border-white/10 bg-[#0C1222]/30 relative">
         <Container>
           <div className="max-w-2xl mx-auto text-center mb-8 sm:mb-10">
             <Badge variant="blue" size="sm" dot={false} className="mb-2.5">
@@ -131,21 +131,21 @@ export const WhyJoinPage: React.FC<WhyJoinPageProps> = ({ onNavigate }) => {
             {roadmapSteps.map((step) => (
               <div
                 key={step.step}
-                className="p-5 rounded-2xl bg-[#0E1629] border border-white/10 hover:border-blue-500/40 transition-all flex flex-col justify-between space-y-3 shadow-sm"
+                className="p-5 sm:p-6 rounded-3xl apple-glass hover:border-blue-400/40 hover:bg-white/[0.08] transition-all duration-300 flex flex-col justify-between space-y-3 shadow-lg"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <div className="p-2.5 rounded-xl bg-[#10192D] border border-white/10">
+                    <div className="p-2.5 rounded-2xl apple-glass-subtle">
                       {step.icon}
                     </div>
-                    <span className="text-lg font-black font-mono text-slate-600">
+                    <span className="text-lg font-black font-mono text-slate-500">
                       {step.step}
                     </span>
                   </div>
                   <h3 className="text-sm sm:text-base font-bold text-[#F8FAFC] font-['Space_Grotesk']">
                     {step.title}
                   </h3>
-                  <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">
+                  <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
                     {step.description}
                   </p>
                 </div>

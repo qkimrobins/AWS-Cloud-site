@@ -68,28 +68,28 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onNavigate }) => {
       <section className="py-8 md:py-12">
         <Container>
           {/* Compact Filter Bar */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-[#0E1629] border border-white/10 mb-8 space-y-3.5 shadow-md">
+          <div className="p-4 sm:p-5 rounded-3xl apple-glass mb-8 space-y-3.5 shadow-xl">
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
               {/* Search input */}
               <div className="relative flex-1">
-                <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
                   placeholder="Search events, topics, or speakers..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl bg-[#10192D] border border-white/10 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full pl-9 pr-3.5 py-2 text-xs rounded-2xl apple-glass-input text-slate-200 placeholder-slate-400 focus:outline-none transition-all"
                 />
               </div>
 
               {/* Status Selector */}
-              <div className="flex items-center gap-1 p-1 rounded-xl bg-[#10192D] border border-white/10 shrink-0 self-start sm:self-auto">
+              <div className="flex items-center gap-1 p-1 rounded-2xl apple-glass-subtle shrink-0 self-start sm:self-auto">
                 <button
                   type="button"
                   onClick={() => setStatusFilter('all')}
-                  className={`px-2.5 py-1 text-xs font-medium rounded-lg transition-colors cursor-pointer ${
+                  className={`px-3 py-1.5 text-xs font-medium rounded-xl transition-all cursor-pointer ${
                     statusFilter === 'all'
-                      ? 'bg-blue-600 text-white font-semibold'
+                      ? 'bg-blue-600/90 text-white font-semibold shadow-sm'
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
@@ -98,9 +98,9 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onNavigate }) => {
                 <button
                   type="button"
                   onClick={() => setStatusFilter('upcoming')}
-                  className={`px-2.5 py-1 text-xs font-medium rounded-lg transition-colors cursor-pointer ${
+                  className={`px-3 py-1.5 text-xs font-medium rounded-xl transition-all cursor-pointer ${
                     statusFilter === 'upcoming'
-                      ? 'bg-blue-600 text-white font-semibold'
+                      ? 'bg-blue-600/90 text-white font-semibold shadow-sm'
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
@@ -109,9 +109,9 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onNavigate }) => {
                 <button
                   type="button"
                   onClick={() => setStatusFilter('completed')}
-                  className={`px-2.5 py-1 text-xs font-medium rounded-lg transition-colors cursor-pointer ${
+                  className={`px-3 py-1.5 text-xs font-medium rounded-xl transition-all cursor-pointer ${
                     statusFilter === 'completed'
-                      ? 'bg-blue-600 text-white font-semibold'
+                      ? 'bg-blue-600/90 text-white font-semibold shadow-sm'
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
@@ -121,16 +121,16 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onNavigate }) => {
             </div>
 
             {/* Category Pills */}
-            <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-white/5">
+            <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-white/10">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   type="button"
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-2.5 py-0.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
+                  className={`px-3 py-1 rounded-full text-xs font-medium transition-all cursor-pointer ${
                     activeCategory === cat
-                      ? 'bg-blue-600 text-white font-semibold shadow-sm'
-                      : 'bg-[#10192D] text-slate-400 hover:text-white border border-white/10'
+                      ? 'bg-blue-600/90 text-white font-semibold shadow-[0_0_12px_rgba(59,130,246,0.4)] border border-blue-400/40'
+                      : 'apple-glass-subtle text-slate-300 hover:text-white hover:bg-white/[0.1]'
                   }`}
                 >
                   {cat === 'all' ? 'All' : cat}
@@ -147,7 +147,7 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onNavigate }) => {
               ))}
             </div>
           ) : (
-            <div className="text-center py-12 p-6 rounded-2xl bg-[#0E1629] border border-white/10 max-w-md mx-auto space-y-2">
+            <div className="text-center py-12 p-6 rounded-3xl apple-glass max-w-md mx-auto space-y-2">
               <Calendar className="w-8 h-8 text-slate-500 mx-auto" />
               <h3 className="text-sm font-bold text-[#F8FAFC]">No events match your filter</h3>
               <p className="text-xs text-slate-400">
@@ -167,7 +167,7 @@ export const EventsPage: React.FC<EventsPageProps> = ({ onNavigate }) => {
           )}
 
           {/* Propose a Talk Banner */}
-          <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-[#10192D] to-[#15223C] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto">
+          <div className="mt-12 p-6 rounded-3xl apple-glass flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto shadow-xl">
             <div className="space-y-1 text-center sm:text-left">
               <div className="inline-flex items-center gap-1 text-[11px] font-mono text-purple-400 uppercase tracking-wide">
                 <Sparkles className="w-3 h-3" />

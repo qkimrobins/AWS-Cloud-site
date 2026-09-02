@@ -61,7 +61,15 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080C16] text-[#F8FAFC] selection:bg-blue-600/30 selection:text-white flex flex-col font-sans">
+    <div className="min-h-screen bg-[#080C16] text-[#F8FAFC] selection:bg-blue-600/30 selection:text-white flex flex-col font-sans relative">
+      {/* Apple VisionOS Dynamic Aurora Lighting for Glassmorphism Depth */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute -top-40 left-1/4 w-[650px] h-[650px] bg-gradient-to-br from-blue-600/15 via-indigo-600/10 to-transparent blur-[140px] rounded-full" />
+        <div className="absolute top-1/4 -right-28 w-[550px] h-[550px] bg-gradient-to-bl from-purple-600/12 via-fuchsia-600/8 to-transparent blur-[150px] rounded-full" />
+        <div className="absolute top-2/3 -left-28 w-[550px] h-[550px] bg-gradient-to-tr from-sky-500/10 via-blue-600/8 to-transparent blur-[140px] rounded-full" />
+        <div className="absolute -bottom-32 right-1/4 w-[600px] h-[600px] bg-gradient-to-tl from-indigo-600/12 via-purple-600/8 to-transparent blur-[150px] rounded-full" />
+      </div>
+
       {/* Skip to Content for Accessibility */}
       <a
         href="#main-content"

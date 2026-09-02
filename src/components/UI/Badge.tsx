@@ -18,15 +18,15 @@ export const Badge: React.FC<BadgeProps> = ({
   ...props
 }) => {
   const variantStyles: Record<string, string> = {
-    blue: 'bg-blue-500/10 text-blue-400 border-blue-500/30',
-    purple: 'bg-purple-500/10 text-purple-400 border-purple-500/30',
-    indigo: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/30',
-    cyan: 'bg-sky-500/10 text-sky-400 border-sky-500/30',
-    slate: 'bg-slate-800/80 text-slate-300 border-slate-700/60',
-    outline: 'bg-transparent text-slate-300 border-white/20',
+    blue: 'bg-blue-500/15 text-blue-300 border-blue-400/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]',
+    purple: 'bg-purple-500/15 text-purple-300 border-purple-400/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]',
+    indigo: 'bg-indigo-500/15 text-indigo-300 border-indigo-400/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]',
+    cyan: 'bg-sky-500/15 text-sky-300 border-sky-400/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]',
+    slate: 'bg-white/[0.06] text-slate-300 border-white/15 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]',
+    outline: 'bg-white/[0.03] text-slate-300 border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]',
     // Aliases for compatibility
-    primary: 'bg-blue-500/10 text-blue-400 border-blue-500/30',
-    secondary: 'bg-slate-800/80 text-slate-300 border-slate-700/60',
+    primary: 'bg-blue-500/15 text-blue-300 border-blue-400/30 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]',
+    secondary: 'bg-white/[0.06] text-slate-300 border-white/15 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]',
   };
 
   const sizeStyles = {
@@ -51,7 +51,7 @@ export const Badge: React.FC<BadgeProps> = ({
   return (
     <span
       className={twMerge(
-        'inline-flex items-center gap-1.5 rounded-full border backdrop-blur-sm transition-colors duration-200 select-none uppercase font-mono',
+        'inline-flex items-center gap-1.5 rounded-full border backdrop-blur-md transition-all duration-200 select-none uppercase font-mono',
         variantStyles[selectedVariant],
         sizeStyles[size],
         className

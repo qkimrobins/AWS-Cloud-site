@@ -74,8 +74,8 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onNavigate }) => {
                   onClick={() => setActiveFilter(dept)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
                     isActive
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25 border border-blue-400/30'
-                      : 'bg-[#0E1629] text-slate-400 hover:text-white border border-white/10 hover:border-white/20'
+                      ? 'bg-blue-600/90 text-white shadow-[0_0_15px_rgba(59,130,246,0.5),inset_0_1px_1px_rgba(255,255,255,0.3)] border border-blue-400/40 font-semibold'
+                      : 'apple-glass-subtle text-slate-300 hover:text-white hover:bg-white/[0.1]'
                   }`}
                 >
                   {label}
@@ -92,7 +92,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onNavigate }) => {
           </div>
 
           {/* Volunteer Callout Box */}
-          <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-[#10192D] to-[#15223C] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto">
+          <div className="mt-12 p-6 sm:p-7 rounded-3xl apple-glass shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto">
             <div className="space-y-1 text-center sm:text-left">
               <div className="inline-flex items-center gap-1 text-[11px] font-mono text-blue-400 uppercase tracking-wide">
                 <Sparkles className="w-3 h-3" />
@@ -101,7 +101,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onNavigate }) => {
               <h3 className="text-base font-bold text-[#F8FAFC] font-['Space_Grotesk']">
                 Want to Volunteer with Core Team?
               </h3>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-300">
                 Help coordinate workshops, design graphics, and manage technical logistics.
               </p>
             </div>

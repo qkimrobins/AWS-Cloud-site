@@ -59,7 +59,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPage, onNavigate 
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#080C16]/90 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.6)] py-3'
+            ? 'apple-glass-nav py-3'
             : 'bg-transparent py-5'
         }`}
       >
@@ -72,7 +72,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPage, onNavigate 
               className="flex items-center gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl p-1 -ml-1 transition-transform active:scale-95 cursor-pointer"
               aria-label="Central University of Jammu Cloud Club Home"
             >
-              <div className="relative flex items-center justify-center h-10 w-10 sm:h-11 sm:w-11 rounded-xl bg-gradient-to-br from-[#10192D] to-[#15223C] border border-white/15 p-1.5 shadow-md group-hover:border-blue-500/50 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.25)] transition-all duration-300">
+              <div className="relative flex items-center justify-center h-10 w-10 sm:h-11 sm:w-11 rounded-2xl apple-glass-subtle p-1.5 shadow-md group-hover:border-blue-400/50 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300">
                 <img
                   src={siteContent.identity.logo}
                   alt="Cloud Club Logo"
@@ -100,9 +100,9 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPage, onNavigate 
               </div>
             </a>
 
-            {/* Desktop Navigation Links */}
+            {/* Desktop Navigation Links - Apple Glass Pill Island */}
             <nav
-              className="hidden md:flex items-center gap-1 bg-[#10192D]/80 border border-white/10 rounded-full px-3.5 py-1.5 backdrop-blur-md shadow-inner"
+              className="hidden md:flex items-center gap-1 apple-glass-nav rounded-full px-3.5 py-1.5"
               aria-label="Main Navigation"
             >
               {siteContent.navigation.map((item) => {
@@ -115,8 +115,8 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPage, onNavigate 
                     onClick={handleNav(pageKey)}
                     className={`px-3.5 py-1.5 text-xs lg:text-sm font-medium rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 cursor-pointer ${
                       isActive
-                        ? 'text-white bg-blue-600/30 border border-blue-500/40 font-semibold shadow-sm'
-                        : 'text-slate-300 hover:text-white hover:bg-white/5 border border-transparent'
+                        ? 'text-white bg-white/[0.14] border border-white/25 shadow-[0_2px_10px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.25)] font-semibold'
+                        : 'text-slate-300 hover:text-white hover:bg-white/[0.08] border border-transparent'
                     }`}
                   >
                     {item.label}
@@ -145,7 +145,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPage, onNavigate 
                 href={siteContent.hero.joinCta.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="sm:hidden px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-500 transition-colors"
+                className="sm:hidden px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-500 transition-colors shadow-md"
               >
                 Join
               </a>
@@ -153,7 +153,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPage, onNavigate 
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2.5 rounded-xl bg-[#10192D] border border-white/10 text-[#F8FAFC] hover:text-blue-400 hover:border-blue-500/40 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 cursor-pointer"
+                className="p-2.5 rounded-xl apple-glass-subtle text-[#F8FAFC] hover:text-blue-400 hover:border-blue-400/40 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 cursor-pointer"
                 aria-expanded={isMobileMenuOpen}
                 aria-label="Toggle navigation menu"
               >
@@ -169,13 +169,13 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPage, onNavigate 
         <div className="fixed inset-0 z-40 md:hidden animate-fade-in">
           {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-[#080C16]/90 backdrop-blur-xl transition-opacity"
+            className="fixed inset-0 bg-[#080C16]/80 backdrop-blur-2xl transition-opacity"
             onClick={closeMobileMenu}
             aria-hidden="true"
           />
 
           {/* Drawer Content */}
-          <div className="fixed inset-x-4 top-20 bottom-8 max-h-[80vh] rounded-2xl bg-[#0E1629] border border-white/15 p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
+          <div className="fixed inset-x-4 top-20 bottom-8 max-h-[80vh] rounded-3xl apple-glass border border-white/20 p-6 shadow-[0_25px_70px_rgba(0,0,0,0.7),inset_0_1px_2px_rgba(255,255,255,0.25)] flex flex-col justify-between overflow-y-auto">
             <div className="space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-white/10">
                 <span className="text-xs font-mono uppercase tracking-widest text-slate-400">
@@ -195,10 +195,10 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ currentPage, onNavigate 
                       key={item.label}
                       href={item.href}
                       onClick={handleNav(pageKey)}
-                      className={`flex items-center justify-between px-4 py-3 text-base font-medium rounded-xl transition-colors border cursor-pointer ${
+                      className={`flex items-center justify-between px-4 py-3 text-base font-medium rounded-2xl transition-all border cursor-pointer ${
                         isActive
-                          ? 'text-white bg-blue-600/20 border-blue-500/30'
-                          : 'text-[#F8FAFC] hover:text-blue-400 hover:bg-white/5 border-transparent'
+                          ? 'text-white bg-white/[0.14] border-white/25 shadow-sm'
+                          : 'text-[#F8FAFC] hover:text-blue-400 hover:bg-white/[0.08] border-transparent'
                       }`}
                     >
                       <span>{item.label}</span>
