@@ -11,76 +11,57 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({ feature, index }) => {
   const getIcon = () => {
     switch (feature.iconName) {
       case 'Cloud':
-        return <Cloud className="w-6 h-6 text-[#FF9900]" />;
+        return <Cloud className="w-4 h-4 text-blue-400" />;
       case 'GitBranch':
-        return <GitBranch className="w-6 h-6 text-[#7DD3FC]" />;
+        return <GitBranch className="w-4 h-4 text-indigo-400" />;
       case 'Layers':
-        return <Layers className="w-6 h-6 text-[#34D399]" />;
+        return <Layers className="w-4 h-4 text-sky-400" />;
       case 'Calendar':
-        return <Calendar className="w-6 h-6 text-[#FF9900]" />;
+        return <Calendar className="w-4 h-4 text-purple-400" />;
       case 'Compass':
-        return <Compass className="w-6 h-6 text-[#7DD3FC]" />;
+        return <Compass className="w-4 h-4 text-violet-400" />;
       case 'Award':
-        return <Award className="w-6 h-6 text-[#A78BFA]" />;
+        return <Award className="w-4 h-4 text-indigo-300" />;
       default:
-        return <Cloud className="w-6 h-6 text-[#FF9900]" />;
-    }
-  };
-
-  const getAccentBorder = () => {
-    switch (feature.iconName) {
-      case 'Cloud':
-      case 'Calendar':
-        return 'group-hover:border-[#FF9900]/40 group-hover:shadow-[0_0_25px_rgba(255,153,0,0.15)]';
-      case 'GitBranch':
-      case 'Compass':
-        return 'group-hover:border-[#7DD3FC]/40 group-hover:shadow-[0_0_25px_rgba(125,211,252,0.15)]';
-      case 'Layers':
-        return 'group-hover:border-[#34D399]/40 group-hover:shadow-[0_0_25px_rgba(52,211,153,0.15)]';
-      case 'Award':
-        return 'group-hover:border-[#A78BFA]/40 group-hover:shadow-[0_0_25px_rgba(167,139,250,0.15)]';
-      default:
-        return 'group-hover:border-[#FF9900]/40';
+        return <Cloud className="w-4 h-4 text-blue-400" />;
     }
   };
 
   return (
-    <div
-      className={`group relative rounded-2xl bg-[#0E1B2C] border border-white/10 p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 ${getAccentBorder()}`}
-    >
+    <div className="group relative rounded-2xl bg-[#0E1629] border border-white/10 p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:border-blue-500/40 hover:bg-[#121B30] shadow-sm">
       <div>
         {/* Top bar with Icon and Category/Index */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="p-3.5 rounded-xl bg-[#101D2E] border border-white/10 group-hover:scale-110 transition-transform duration-300">
+        <div className="flex items-center justify-between mb-4">
+          <div className="p-2.5 rounded-xl bg-[#10192D] border border-white/10 group-hover:scale-105 transition-transform duration-200">
             {getIcon()}
           </div>
-          <div className="flex items-center gap-2">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-[#A9B7C9]/70 bg-white/5 px-2.5 py-1 rounded-md border border-white/5">
+          <div className="flex items-center gap-1.5">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 bg-white/5 px-2 py-0.5 rounded-md border border-white/5">
               {feature.category}
             </span>
-            <span className="text-xs font-mono text-[#A9B7C9]/40">
+            <span className="text-xs font-mono text-slate-500">
               0{index + 1}
             </span>
           </div>
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-[#F7FAFC] group-hover:text-[#FF9900] transition-colors font-['Space_Grotesk'] mb-3">
+        <h3 className="text-base sm:text-lg font-bold text-[#F8FAFC] group-hover:text-blue-400 transition-colors font-['Space_Grotesk'] mb-2">
           {feature.title}
         </h3>
 
-        {/* Description from PRD */}
-        <p className="text-sm sm:text-base text-[#A9B7C9] leading-relaxed mb-6 font-normal">
+        {/* Description */}
+        <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4 font-normal">
           {feature.description}
         </p>
       </div>
 
       {/* Tech Tags Bottom */}
-      <div className="pt-4 border-t border-white/10 flex flex-wrap gap-1.5">
+      <div className="pt-3 border-t border-white/10 flex flex-wrap gap-1">
         {feature.tags.map((tag) => (
           <span
             key={tag}
-            className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#101D2E] text-[#A9B7C9] border border-white/5"
+            className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#10192D] text-slate-400 border border-white/5"
           >
             #{tag}
           </span>
