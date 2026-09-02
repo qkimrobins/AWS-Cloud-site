@@ -62,6 +62,27 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onNavigate }) => {
       {/* Team Directory Section */}
       <section className="py-8 md:py-12">
         <Container>
+          {/* Department Filter Tabs */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-8 max-w-3xl mx-auto">
+            {departments.map((dept) => {
+              const isActive = activeFilter === dept;
+              const label = dept === 'all' ? 'All Members' : dept;
+              return (
+                <button
+                  key={dept}
+                  type="button"
+                  onClick={() => setActiveFilter(dept)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
+                    isActive
+                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25 border border-blue-400/30'
+                      : 'bg-[#0E1629] text-slate-400 hover:text-white border border-white/10 hover:border-white/20'
+                  }`}
+                >
+                  {label}
+                </button>
+              );
+            })}
+          </div>
 
           {/* Members Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 items-stretch max-w-5xl mx-auto">
